@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | The Master Tailor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Master<span>Tailor</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="designs.html">Designs</a></li>
+                <li><a href="booking.html" class="active">Book Appointment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tailor-login.html" class="btn-login">Tailor Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h2>Book Your Visit</h2>
+            <p>Secure your exclusive consultation slot</p>
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <form id="bookingForm" class="styled-form">
+                    <div class="form-group">
+                        <label for="customer_name">Full Name</label>
+                        <input type="text" id="customer_name" name="customer_name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customer_mobile">Mobile Number</label>
+                        <input type="tel" id="customer_mobile" name="customer_mobile" required placeholder="+1 234 567 8900">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customer_address">Address</label>
+                        <textarea id="customer_address" name="customer_address" required placeholder="Your delivery address..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="design_select">Interested Design (Optional)</label>
+                        <select id="design_select" name="design_id">
+                            <option value="">-- Select a Design --</option>
+                            <!-- Options populated via JS -->
+                        </select>
+                        <small id="completion-estimate" class="hint-text"></small>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="booking_date">Date</label>
+                            <input type="date" id="booking_date" name="booking_date" required>
+                        </div>
+                        <div class="form-group half">
+                            <label for="booking_time">Time Slot</label>
+                            <select id="booking_time" name="booking_time" required disabled>
+                                <option value="">Select Date First</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Confirm Booking</button>
+                </form>
+                
+                <div id="booking-success" class="success-message hidden">
+                    <div class="check-icon">✓</div>
+                    <h3>Booking Confirmed!</h3>
+                    <p>Your appointment is locked.</p>
+                    <div class="booking-details-summary">
+                        <p><strong>Date:</strong> <span id="summary-date"></span></p>
+                        <p><strong>Time:</strong> <span id="summary-time"></span></p>
+                        <p><strong>Est. Delivery:</strong> <span id="summary-delivery"></span></p>
+                    </div>
+                    <button id="new-booking-btn" class="btn btn-outline">Book Another</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 The Master Tailor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

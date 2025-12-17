@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailor Dashboard | The Master Tailor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <nav class="navbar dashboard-nav">
+        <div class="container">
+            <a href="#" class="logo">Tailor<span>Admin</span></a>
+            <ul class="nav-links">
+                <li><span class="welcome-text">Welcome, Master Tailor</span></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#" class="tab-link active" data-tab="bookings">Manage Bookings</a></li>
+                <li><a href="#" class="tab-link" data-tab="designs">Manage Designs</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <!-- Bookings Tab -->
+            <div id="bookings-tab" class="tab-content active">
+                <div class="tab-header">
+                    <h2>Client Appointments</h2>
+                    <div class="stats">
+                        <div class="stat-box">
+                            <span class="stat-number" id="total-bookings">0</span>
+                            <span class="stat-label">Total</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number" id="upcoming-bookings">0</span>
+                            <span class="stat-label">Upcoming</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="data-table" id="bookings-table">
+                        <thead>
+                            <tr>
+                                <th>Date/Time</th>
+                                <th>Customer</th>
+                                <th>Contact</th>
+                                <th>Design</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Filled via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Designs Tab -->
+            <div id="designs-tab" class="tab-content">
+                <div class="tab-header">
+                    <h2>Design Catalog</h2>
+                    <button id="add-design-btn" class="btn btn-primary">+ Add New Design</button>
+                </div>
+
+                <!-- Add Design Form (Hidden by default) -->
+                <div id="add-design-panel" class="panel hidden">
+                    <h3>Upload New Design</h3>
+                    <form id="addDesignForm" class="styled-form">
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label>Design Title</label>
+                                <input type="text" name="title" required>
+                            </div>
+                            <div class="form-group half">
+                                <label>Price ($)</label>
+                                <input type="number" name="price" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label>Completion Days</label>
+                                <input type="number" name="days_to_complete" required>
+                            </div>
+                            <div class="form-group half">
+                                <label>Category</label>
+                                <select name="category">
+                                    <option>Suit</option>
+                                    <option>Dress</option>
+                                    <option>Traditional</option>
+                                    <option>Alteration</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Image Type (for Demo)</label>
+                            <select name="image_type">
+                                <option value="suit">Men's Suit</option>
+                                <option value="dress">Women's Dress</option>
+                                <option value="fabric">Fabric Detail</option>
+                                <option value="measuring">Tailoring Process</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea name="description" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" id="cancel-design">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Upload Design</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="admin-designs-grid" id="admin-designs-list">
+                    <!-- Admin Design Cards -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

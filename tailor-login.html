@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailor Login | The Master Tailor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Master<span>Tailor</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="designs.html">Designs</a></li>
+                <li><a href="booking.html">Book Appointment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tailor-login.html" class="active btn-login">Tailor Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="login-section">
+        <div class="container">
+            <div class="login-card">
+                <h2>Tailor Portal</h2>
+                <p>Authorized personnel only</p>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Login ID</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Secure Login</button>
+                    <div id="login-error" class="error-msg hidden">Invalid Login ID or Password</div>
+                </form>
+                <div class="login-help">
+                    <small>Default ID: TAILOR2006 / Pass: Tailor@2006</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
