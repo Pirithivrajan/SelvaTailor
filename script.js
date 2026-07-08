@@ -273,8 +273,8 @@ function initLoginPage() {
         const pass = document.getElementById('password').value;
         const error = document.getElementById('login-error');
 
-        // Hardcoded secure check as per prompt
-        if (user === 'TAILOR2006' && pass === 'Tailor@2006') {
+        // Hardcoded secure check with updated credentials
+        if (user === 'Selvamani' && pass === 'Selva@123') {
             sessionStorage.setItem('isTailorLoggedIn', 'true');
             window.location.href = 'tailor-dashboard.html';
         } else {
